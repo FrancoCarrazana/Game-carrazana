@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-
+import CardWidget from '../../Icon/CartWidget.js';
 
 const NavBar = () => {
   return (
@@ -20,6 +20,7 @@ const NavBar = () => {
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
+      <CardWidget />
     </Container>
   </Navbar>
   )
