@@ -9,16 +9,15 @@ const appStyles = {
   backgraundColor: "red"
 }
 
-function App() {
-  return (
-  <div className='App'>
-    <NavBar />
-    <h1>La tienda mas grande de latino america</h1>
-    <hr/>
-    <ItemListContainer  />
-
-    <div style={appStyles}/> 
-  </div>
-  )  
-}
-export default App;
+  function App() {
+    return (
+    <div className='App'>
+      <NavBar />
+      <h1>La tienda mas grande de latino america</h1>
+      <hr/>
+      <ItemListContainer  />
+      <div style={appStyles}/> 
+    </div>
+    )
+  }
+  export default App;
