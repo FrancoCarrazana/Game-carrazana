@@ -1,9 +1,11 @@
-import React, {  useState } from "react";
+import React, {  useEffect, useState } from "react";
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, setStockSelected }) => {
   const [count, setCount] = useState(0);
 
-
+ useEffect (()=> {
+  setStockSelected (count)
+ }, [count])
 
   const lessCount = () => {
     if (count <= 0) return;
@@ -18,13 +20,9 @@ const ItemCount = ({ stock }) => {
   return (
     <>
       <div>
-        <h4>Elegir unidades</h4>
-        <br/>
         <button onClick={lessCount}>-</button>
         <span>{count}</span>
         <button onClick={moreCount}>+</button>
-        <br/>
-        <button>Agregar al carrito</button>
       </div>
     </>
   );
