@@ -1,14 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import   NavBar   from './components/navbar/NavBar';
-import ItemListContainer from './components/item-list-container/ItemListContainer';
-
-
-const appStyles = {
-  height: 300,
-  width: 300,
-  backgraundColor: "red"
-}
+// import ItemListContainer from './components/item-list-container/ItemListContainer';
+import ItemDetailCountainer   from './components/item-detail-countainer/ItemDetailCountainer';
 
   function App() {
     
@@ -16,10 +10,8 @@ const appStyles = {
   return (
     <div className='App'>
       <NavBar />
-      <h1>La tienda mas grande de latino america</h1>
-      <hr/>
-      <ItemListContainer  />
-      <div style={appStyles}/> 
+      {/* <ItemListContainer  /> */}
+      <ItemDetailCountainer />
     </div>
     )
   }
