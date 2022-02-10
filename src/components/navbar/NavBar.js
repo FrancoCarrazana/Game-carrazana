@@ -1,22 +1,76 @@
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import CardWidget from '../../Icon/CartWidget.js';
-
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
+  // const activeStyle = {
+  //  color: 'green'
+  //   } 
+
   return (
     <Navbar bg="light" expand="lg">
     <Container>
-      <Navbar.Brand href="#home">Gameshop</Navbar.Brand>
+      <Navbar.Brand>
+        <Link to="/">Gameshop</Link>
+        </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Ofertas</Nav.Link>
+          <Nav.Link>
+          {/* <NavLink to="/item" style={({isActive}) => (isActive ? activeStyle : undefined)}>item</NavLink> */}
+            </Nav.Link>
           <NavDropdown title="Categorias" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+            <NavDropdown.Item>
+              <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/Accion"
+              >
+                Accion 
+              </NavLink>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/Aventura"
+              >
+                Aventura 
+              </NavLink>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/Disparos"
+              >
+                Disparos 
+              </NavLink>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/Carreras"
+              >
+                Carreras 
+              </NavLink>
+            </NavDropdown.Item>
+            <NavDropdown.Divider/>
+            <NavDropdown.Item>
+              <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/Consolas"
+              >
+                Consolas 
+              </NavLink>
+            </NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

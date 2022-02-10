@@ -4,8 +4,8 @@ const ItemCount = ({ stock, setStockSelected }) => {
   const [count, setCount] = useState(0);
 
  useEffect (()=> {
-  setStockSelected (count)
- }, [count])
+  setStockSelected(count)
+ }, [count]);
 
   const lessCount = () => {
     if (count <= 0) return;
