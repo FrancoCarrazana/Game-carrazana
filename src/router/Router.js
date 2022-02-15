@@ -4,7 +4,6 @@ import ItemListContainer from '../components/item-list-container/ItemListContain
 import NavBar from '../components/navbar/NavBar'
 import NotFound from '../components/not-found/NotFound'
 import ItemDetailContainer from '../components/item-detail-container/ItemDetailContainer'
-
 const Router = () => {
   return (
     <BrowserRouter>

@@ -2,6 +2,8 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import CardWidget from '../../Icon/CartWidget.js';
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import './NavBar.css';
+
 const NavBar = () => {
   // const activeStyle = {
   //  color: 'green'
