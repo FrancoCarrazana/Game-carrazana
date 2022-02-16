@@ -4,14 +4,16 @@ import ItemListContainer from '../components/item-list-container/ItemListContain
 import NavBar from '../components/navbar/NavBar'
 import NotFound from '../components/not-found/NotFound'
 import ItemDetailContainer from '../components/item-detail-container/ItemDetailContainer'
+import Cart from '../components/Cart/Cart'
 const Router = () => {
   return (
     <BrowserRouter>
       <NavBar />
       <Routes>
         <Route path="/" element= { <ItemListContainer /> } />
-        <Route path="category/:id" element= { <ItemListContainer /> } />
-        <Route path="item/:id" element= { <ItemDetailContainer /> } />
+        <Route path="/category/:id" element= { <ItemListContainer /> } />
+        <Route path="/cart" element= { <Cart /> } />
+        <Route path="/item/:id" element= { <ItemDetailContainer /> } />
         <Route path="*" element= { <NotFound /> } />
       </Routes>
     </BrowserRouter>

@@ -2,19 +2,30 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import ItemCount from "../item-count/itemCount";
-import Cart from "../Cart/Cart"
-const ItemDetailContainer = () => {
+import { useContext } from "react";
+import { CartContext } from "../../Context/cartContext";
+
+const ItemDetailContainer = () => { 
   const { products } = useProducts();
   const { id } = useParams();
-  const [inputInfo] = useState("");
+  // const [inputInfo] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
-  const [comments, setComments] = useState ('');
- 
-  const onAdd = (event, message) => {
-    event.stopPropagation();
-    console.log("Message: " + message);
-    setComments((comments) => [...comments, inputInfo]);
-  };
+  // const [comments, setComments] = useState ('');
+  const {addItem} = useContext (CartContext); 
+  const [quantity, setQuantity] = useState(0);
+
+  const handleAddToCart = () => {
+    addItem({
+      item : selectedItem,
+      quantity,
+    });
+  }
+
+  // const onAdd = (event, message) => {
+  //   event.stopPropagation();
+  //   console.log("Message: " + message);
+  //   setComments((comments) => [...comments, inputInfo]);
+  // };
 
   useEffect(() => {
     if (products.length > 0) {
@@ -32,9 +43,9 @@ const ItemDetailContainer = () => {
       <p>{selectedItem && selectedItem.description}</p>
       <p>ID: {selectedItem && selectedItem.id}</p>
       <p>STOCK: {selectedItem && selectedItem.stock}</p>
-      <ItemCount />
-      <button onClick={(event) => onAdd(event, "Agregado exitosamente al carrito")} >
-          <Cart />
+      <ItemCount stock={selectedItem?.stock} setStockSelected={setQuantity} />
+      <button onClick={handleAddToCart}>
+          <h4>Agregar al Carrito</h4>
         </button>
     </div>
   );
