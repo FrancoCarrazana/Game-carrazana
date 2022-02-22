@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import ItemCount from "../item-count/itemCount";
 import { useContext } from "react";
@@ -35,18 +35,18 @@ const ItemDetailContainer = () => {
   }, [products]);
 
   return (
-    <div>
-      <h3>Producto seleccionado</h3>
+    <div key={id}>
+      <h2>Producto seleccionado</h2>
       {selectedItem && selectedItem.image}
+      <h4>{selectedItem && selectedItem.name}</h4>
       <p>{selectedItem && selectedItem.stock}</p>
-      <p>{selectedItem && selectedItem.name}</p>
       <p>{selectedItem && selectedItem.description}</p>
       <p>ID: {selectedItem && selectedItem.id}</p>
       <p>STOCK: {selectedItem && selectedItem.stock}</p>
       <ItemCount stock={selectedItem?.stock} setStockSelected={setQuantity} />
-      <button onClick={handleAddToCart}>
-          <h4>Agregar al Carrito</h4>
-        </button>
+      <button onClick={handleAddToCart}>Agregar al Carrito</button>
+        <br/>
+          <Link to="/"><button>Seguir comprando</button></Link>
     </div>
   );
 };
