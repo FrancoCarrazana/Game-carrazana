@@ -4,6 +4,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './NavBar.css';
 
+
 const NavBar = () => {
   // const activeStyle = {
   //  color: 'green'

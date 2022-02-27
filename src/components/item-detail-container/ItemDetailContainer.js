@@ -5,6 +5,7 @@ import ItemCount from "../item-count/itemCount";
 import { useContext } from "react";
 import { CartContext } from "../../Context/cartContext";
 
+
 const ItemDetailContainer = () => { 
   const { products } = useProducts();
   const { id } = useParams();
@@ -13,6 +14,8 @@ const ItemDetailContainer = () => {
   // const [comments, setComments] = useState ('');
   const {addItem} = useContext (CartContext); 
   const [quantity, setQuantity] = useState(0);
+
+
 
   const handleAddToCart = () => {
     addItem({
@@ -37,7 +40,7 @@ const ItemDetailContainer = () => {
   return (
     <div key={id}>
       <h2>Producto seleccionado</h2>
-      {selectedItem && selectedItem.image}
+     <img src={selectedItem && selectedItem.image} alt={selectedItem && selectedItem.name}/>
       <h4>{selectedItem && selectedItem.name}</h4>
       <p>{selectedItem && selectedItem.stock}</p>
       <p>{selectedItem && selectedItem.description}</p>

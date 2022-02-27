@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/cartContext';
 
 const Cart = () => {
- const { items, removeItem, clearItem , moreItem, lessItem } = useContext(CartContext);
+ const { items, removeItem, clearItem } = useContext(CartContext);
 //  const finalPrice = items.reduce((acc, item) => acc + item.price, ((a, b) => a + b, 0));
  const finalPrice =  items.map((item) => Number(item.price)) .reduce((a, b) => a + b, 0);
 
@@ -18,11 +18,11 @@ return (
               <li key={item.id}> 
                 <h4>{item.name}</h4>
                 <h4> ${item.price}</h4>
-                <span>{item.image}</span>
+                <img src={item.image} alt={item.name}/>
                 <p>Descripción:{item.description}</p>
                 <h4>Stock del producto:{item.stock}</h4> 
-                <button onClick={moreItem}>aumentar</button>
-                <button onclick={lessItem}>Disminuir</button>
+                <button >aumentar</button>
+                <button >Disminuir</button>
                 <br/>
                 <button onClick={removeItem}>eliminar un producto</button>
                 <button onClick={clearItem}>eliminar todos los productos</button>
