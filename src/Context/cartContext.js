@@ -5,9 +5,9 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
 
-  const addItem = (currentItem) => {
-    if (items.some(({ product }) => product.id === currentItem.item.id)) return;
-    setItems([...items, currentItem]);
+  const addItem = (currentItems) => {
+    if (items.some(({ product }) => product.id === currentItems.item.id)) return;
+    setItems([...items, currentItems]);
   };    
   
   const removeItem = item => {
@@ -47,6 +47,7 @@ const lessItem = item => {
         clearItem,
         moreItem,
         lessItem,
+        
       }}
     >
       {children}

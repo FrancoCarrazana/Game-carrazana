@@ -9,7 +9,7 @@ const useProducts = () => {
 
         getProducts()
         .then(()=>setLoading(false))
-    }, []);
+    }, [2000]);
 
     const getProducts = async ()=> {
 
@@ -28,7 +28,7 @@ const useProducts = () => {
             console.log(error)
             
         }finally {
-            console.log("Finalización del consumo de la API productsAPI");
+            console.log("Finalización del consumo");
           }
     };
 

@@ -36,36 +36,36 @@
 // import { Link } from "react-router-dom";
 
 
-const ItemList = () => {
-  const db = getFirestore();
-  const ItemsCollection = collection(db, 'items');
-  const [products,setProducts] = useState();
-  useEffect(()=> {
-    getDocs(ItemsCollection).then ((snapshot)=> {
-      setProducts(snapshot.docs.map((doc)=> ({id: doc.id, ...doc.data()
-      })))
-    }, [])
-  })
-  return (
-    <div>
-    <h2>productos</h2>
-    {products && products.map(({name, price, image, description, stock,id}) => 
-     ( <div key={id}>
-      <h4>{name}</h4>
-      <img src={image} alt={`${name}`} />
-      <h4>${price}</h4>
-      <p>Descripción:{description}</p>
-      <h4>Stock:{stock}</h4>
-      <Link to={`/item/${id}`}><button>Seleccionar producto</button></Link>
-      <hr/>
-      </div>
-      )
-    )
+// const ItemList = () => {
+//   const db = getFirestore();
+//   const ItemsCollection = collection(db, 'items');
+//   const [products,setProducts] = useState();
+//   useEffect(()=> {
+//     getDocs(ItemsCollection).then ((snapshot)=> {
+//       setProducts(snapshot.docs.map((doc)=> ({id: doc.id, ...doc.data()
+//       })))
+//     }, [])
+//   })
+//   return (
+//     <div>
+//     <h2>productos</h2>
+//     {products && products.map(({name, price, image, description, stock,id}) => 
+//      ( <div key={id}>
+//       <h4>{name}</h4>
+//       <img src={image} alt={`${name}`} />
+//       <h4>${price}</h4>
+//       <p>Descripción:{description}</p>
+//       <h4>Stock:{stock}</h4>
+//       <Link to={`/item/${id}`}><button>Seleccionar producto</button></Link>
+//       <hr/>
+//       </div>
+//       )
+//     )
     
-  }
-  </div>
-)
+//   }
+//   </div>
+// )
 
-}
+// }
 
 // export default ItemList;
