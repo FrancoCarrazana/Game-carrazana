@@ -6,6 +6,7 @@ import NotFound from "../components/not-found/NotFound";
 import ItemDetailContainer from "../components/item-detail-container/ItemDetailContainer";
 import Cart from "../components/Cart/Cart";
 import Footer from "../components/footer/footer";
+import CartForm from "../components/Cart/cartForm";
 const Router = () => {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/category/:id" element={<ItemListContainer />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/form" element={<CartForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
