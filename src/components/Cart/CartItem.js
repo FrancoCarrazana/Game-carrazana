@@ -91,7 +91,7 @@ const CartItem = () => {
                 </label>
                 <input
                   className="form-control"
-                  placeHolder="Ingresar Nombre Completo"
+                  placeholder="Ingresar Nombre Completo"
                   value={buyer.name}
                   name="name"
                   onChange={(e) => setBuyer({ ...buyer, name: e.target.value })}
@@ -104,7 +104,7 @@ const CartItem = () => {
                 </label>
                 <input
                   className="form-control"
-                  placeHolder="Ingresar Numero Telefonico"
+                  placeholder="Ingresar Numero Telefonico"
                   value={buyer.phone}
                   name="phone"
                   onChange={(e) =>
@@ -119,7 +119,7 @@ const CartItem = () => {
                 </label>
                 <input
                   className="form-control"
-                  placeHolder="Ingresar Correo Electronico"
+                  placeholder="Ingresar Correo Electronico"
                   value={buyer.email}
                   name="email"
                   onChange={(e) =>
