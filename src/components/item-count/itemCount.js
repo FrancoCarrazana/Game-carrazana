@@ -1,11 +1,12 @@
-import React, {  useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
+import "./itemCount.css";
 const ItemCount = ({ stock, setStockSelected }) => {
   const [count, setCount] = useState(0);
 
- useEffect (()=> {
-  // setStockSelected(count)
- }, [count]);
+  useEffect(() => {
+    setStockSelected(count);
+  }, [count]);
 
   const lessCount = () => {
     if (count <= 0) return;
@@ -20,9 +21,15 @@ const ItemCount = ({ stock, setStockSelected }) => {
   return (
     <>
       <div>
-        <button onClick={lessCount}>➖</button>
+        <Button className="IC-button" onClick={lessCount}>
+          ➖
+        </Button>
+        {/* <button onClick={lessCount}>➖</button> */}
         <span>{count}</span>
-        <button onClick={moreCount}>➕</button>
+        <Button className="IC-button" onClick={moreCount}>
+          ➕
+        </Button>
+        {/* <button onClick={moreCount}>➕</button> */}
       </div>
     </>
   );

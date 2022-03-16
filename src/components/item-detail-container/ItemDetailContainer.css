@@ -1,9 +1,13 @@
-li {
-  list-style-type: none;
-  padding: 0%;
-  margin: 0%;
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.8;
 }
-.c1 {
+.ITD {
   border: solid black 2px;
   font-size: auto;
   margin: 20px auto;
@@ -13,10 +17,13 @@ li {
   flex-direction: column;
   gap: 10px;
 }
-.c-img {
+.ITD-img {
+  height: auto;
+  width: 40%;
   border: solid black 2px;
   border-radius: 3%;
+  margin: auto;
 }
-.c-button {
+.ITD-button {
   border: solid black 1px;
 }

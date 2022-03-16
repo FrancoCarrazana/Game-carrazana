@@ -1,3 +1,27 @@
 .activeClass {
-    color: red;
-  }
+  color: red;
+}
+.container {
+  display: inline-block;
+  transition: all 1s ease-in-out;
+}
+.container:hover {
+  transform: scale();
+}
+.navbar {
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.925),
+    rgb(211, 211, 208),
+    rgba(192, 189, 190, 0.979),
+    rgba(124, 124, 124, 0.945),
+    rgb(75, 76, 77)
+  );
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: red;
+  display: block;
+}
+.card-widget {
+  border: 1px solid black;
+  border-radius: 3px;
+}

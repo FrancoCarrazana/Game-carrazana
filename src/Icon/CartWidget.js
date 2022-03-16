@@ -1,9 +1,7 @@
 import React from "react";
-import cartSVG from "./cart.svg"
+import cartSVG from "./cart.svg";
 
 const CardWidget = () => {
-    return (
-<img src={cartSVG} alt="cartSVG"/>
-    );
+  return <img src={cartSVG} alt="cartSVG" />;
 };
-export default CardWidget ;
+export default CardWidget;

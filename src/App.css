@@ -1,10 +1,37 @@
 .App {
   text-align: center;
+  background: linear-gradient(
+    to top,
+    rgb(75, 76, 77),
+    rgb(124, 124, 124),
+    rgba(192, 189, 190, 0.925),
+    rgb(211, 211, 208),
+    rgba(255, 255, 255, 0.925)
+  );
+  border: 1px solid black;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+h1 {
+  font-family: Roboto;
+}
+h2 {
+  font-family: Roboto;
+}
+h3 {
+  font-family: Roboto;
+}
+h4 {
+  font-family: Roboto;
+}
+h5 {
+  font-family: Roboto;
+}
+p {
+  font-family: inherit;
 }
 
 @media (prefers-reduced-motion: no-preference) {

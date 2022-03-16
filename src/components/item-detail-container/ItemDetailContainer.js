@@ -4,25 +4,24 @@ import useProducts from "../../hooks/useProducts";
 import ItemCount from "../item-count/itemCount";
 import { useContext } from "react";
 import { CartContext } from "../../Context/cartContext";
+import Button from "react-bootstrap/esm/Button";
+import "./ItemDetailContainer.css";
 
-
-const ItemDetailContainer = () => { 
+const ItemDetailContainer = () => {
   const { products } = useProducts();
   const { id } = useParams();
   // const [inputInfo] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
   // const [comments, setComments] = useState ('');
-  const {addItem} = useContext (CartContext); 
+  const { addItem } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
-
-
 
   const handleAddToCart = () => {
     addItem({
-      item : selectedItem,
+      item: selectedItem,
       quantity,
     });
-  }
+  };
 
   // const onAdd = (event, message) => {
   //   event.stopPropagation();
@@ -38,18 +37,31 @@ const ItemDetailContainer = () => {
   }, [products]);
 
   return (
-    <div key={id}>
+    <div className="ITD" key={id}>
       <h2>Producto seleccionado</h2>
-     <img src={selectedItem && selectedItem.image} alt={selectedItem && selectedItem.name}/>
+      <img
+        className="ITD-img"
+        src={selectedItem && selectedItem.image}
+        alt={selectedItem && selectedItem.name}
+      />
       <h4>{selectedItem && selectedItem.name}</h4>
       <p>{selectedItem && selectedItem.stock}</p>
       <p>{selectedItem && selectedItem.description}</p>
       <p>ID: {selectedItem && selectedItem.id}</p>
       <p>STOCK: {selectedItem && selectedItem.stock}</p>
-      <ItemCount stock={selectedItem?.stock} setStockSelected={setQuantity} />
-      <button onClick={handleAddToCart}>Agregar al Carrito</button>
-        <br/>
-          <Link to="/"><button>Seguir comprando</button></Link>
+      <ItemCount
+        className="ITD-button"
+        stock={selectedItem?.stock}
+        setStockSelected={setQuantity}
+      />
+      <br />
+      <Button className="ITD-button" onClick={handleAddToCart}>
+        Agregar al Carrito
+      </Button>
+      <br />
+      <Link to="/">
+        <Button className="ITD-button">Seguir comprando</Button>
+      </Link>
     </div>
   );
 };

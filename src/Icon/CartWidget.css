@@ -1,4 +1,6 @@
 .icon-cart {
-height: 25px ;
-width: 25px ;
+  height: 25px;
+  width: 25px;
+  border: solid black 2px;
+  border-radius: 3px;
 }
